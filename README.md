@@ -6,7 +6,7 @@ Nextflow workflow to conduct genome-wide association studies in a given species 
 
 The required input files include the following:
 
-  * A phenotype file containing the column `IID` and columns for each phenotype of interest to be analyzed (tab-delimited format with headers: IID"\t"phenoA"\t"phenoB)
+  * A phenotype file containing the column `IID` and columns for each phenotype of interest to be analyzed (tab-delimited format with headers: IID"\t"pheno1"\t"pheno2)
 
 ```
 IID  F1      F2      F3      F4      F5      F6      F7      F8
