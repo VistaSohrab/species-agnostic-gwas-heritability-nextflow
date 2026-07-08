@@ -4,7 +4,7 @@ Nextflow workflow to conduct genome-wide association studies in a given species 
 
 ### Input files 
 
-The input files include the following:
+The required input files include the following:
 
   * A phenotype file containing the column `IID` and columns for each phenotype of interest to be analyzed (tab-delimited format with headers: IID"\t"phenoA"\t"phenoB)
 
@@ -88,8 +88,8 @@ params.include_chrX = false
 ```
 
 #### Note
-Each workflow run is unique to a specific discrete covariate and quantitative covariate set pair (for example, if I have 10 phenotypes to analyze where quantitative covariates are age and weight and discrete covariate is sex; then, I can include those 10 phenotypes in a single phenotype input file with IID, pheno1, pheno2, pheno3,...,pheno10; however, if I have another set of phenotypes with a different set of covariates or would like to exclude covariates altogether, then I would need to run those analyses separately. If quantitative covariate is age and discrete covariate is sex, then I will create a separate phenotype file for that workflow run with IID, phenoA, phenoB). If running the same phenotype with and/or without a particular covariate, embed the covar and qcovar name in the phenotype input file column name, because the column names in the input phenotype file is used to create the output files (and if those are the same names, then the will be overwritten with the most recent workflow run when running the same phenotype with different set of covariates in the same working directory)
-
+Each workflow run is unique to a specific discrete covariate and quantitative covariate set pair. Phenotypes sharing the same covariates can be batched together in one input file (e.g., IID, pheno1, pheno2, ..., pheno10). Phenotypes requiring a different covariate set — or no covariates at all — must be run separately.
+If the same phenotype is analyzed multiple times with different covariates, embed the covariate names in the phenotype column headers (e.g., pheno1_age_sex vs. pheno1_age). Since output filenames are derived from column names, identical column names across runs in the same working directory will cause earlier results to be overwritten.
 
 ### Output files
 * Filtered genetic plinkset used in analyses can be found in *filtered_plinkset*
