@@ -50,9 +50,14 @@ IID  F1      F2      F3      F4      F5      F6      F7      F8
 ```
 
 ### Parameters 
+
 Covariate files are optional. To add a discrete covariate, provide full path to discrete covariate file of interest with --covar and path to quantitative covariate file with --qcovar.
+
 Chr X is excluded from analyses by default, but if you would like to include it in analyses, then set --include_chrX = "true" at job submission.
-Default values are listed that should be changed upon submission of workflow especially autosome number depending on the species (default is set for dogs).
+
+Default values are listed below that can be changed upon submission of workflow. 
+The autosome number must be set depending on the species of interest. The default autosome number is suitable for dogassociation analyses with the autosome_num set to 38.
+
 Path to input files are required for --geneticset, --annotation, and --pheno_dateset.
 
 ```
