@@ -1,6 +1,7 @@
 ## Species agnostic genome-wide association study and heritability workflow 
 Nextflow workflow to conduct genome-wide association studies in a given species of interest using GCTA's mixed linear model with leave-one-chromosome-out approach (GCTA MLMA LOCO) and heritability analyses using GCTA's restricted maximum likelihood
 
+* Developed and used with Nextflow version 24
 
 ### Input files 
 
